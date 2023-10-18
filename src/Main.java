@@ -18,8 +18,6 @@ public class Main {
             executor.execute(new Folderanalyzer(line,executor));
         }
 
-
-        //trovare modo per aspettare tutti e poi chiudere executor
         executor.awaitTermination(2, TimeUnit.SECONDS);
         executor.shutdown();
         while(!executor.isTerminated()){
